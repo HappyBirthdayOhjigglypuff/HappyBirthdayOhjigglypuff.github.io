@@ -27,24 +27,29 @@ function fadeIn(element, speed) {
     var isMobile = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
     console.log(isMobile)
     if (isMobile) {
-        document.getElementById("wrapper").style.display = "none";
-        document.getElementById("wrapper2").style.display = "";
-        fadeOut(document.getElementById("div-background"), 80);
-        fadeIn(document.getElementById("div-font"), 80);
+        var t0 = window.setTimeout(function () {
+            document.getElementById("wrapper").style.display = "none";
+            document.getElementById("wrapper2").style.display = "";
+            fadeOut(document.getElementById("div-background"), 80);
+
+        }, 500)
+        var t0 = window.setTimeout(function () {
+            fadeIn(document.getElementById("div-font"), 80);
+        }, 1000)
         var t1 = window.setTimeout(function () {
             fadeOut(document.getElementById("div-font"), 80);
-        }, 2000)
+        }, 3000)
         var t2 = window.setTimeout(function () {
             document.getElementById("div-font").style.display = "none";
             fadeIn(document.getElementById("div-font2"), 80);
         }, 3000)
         var t1 = window.setTimeout(function () {
             fadeOut(document.getElementById("div-font2"), 80);
-        }, 5000)
+        }, 6000)
         var t2 = window.setTimeout(function () {
             document.getElementById("div-font2").style.display = "none";
             fadeIn(document.getElementById("div-font3"), 80);
-        }, 6000)
+        }, 7000)
     } else {
         document.getElementById("wrapper").style.display = "";
         document.getElementById("init-back").style.display = "none";
