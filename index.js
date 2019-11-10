@@ -1,31 +1,53 @@
 //主程序,业务逻辑
-function fadeOut(element,speed){
-    var speed = speed || 30 ;
+function fadeOut(element, speed) {
+    var speed = speed || 30;
     var num = 10;
-    var st = setInterval(function(){
+    var st = setInterval(function () {
         num--;
-        element.style.opacity = num / 10 ;
-        if(num<=0)  {   clearInterval(st);  }
-    },speed);
+        element.style.opacity = num / 10;
+        if (num <= 0) {
+            clearInterval(st);
+        }
+    }, speed);
 }
-function fadeIn(element,speed){
-    var speed = speed || 30 ;
+
+function fadeIn(element, speed) {
+    var speed = speed || 30;
     var num = 0;
-    var st = setInterval(function(){
+    var st = setInterval(function () {
         num++;
-        element.style.opacity = num/10;
-        if(num>=10)  {  clearInterval(st);  }
-    },speed);
+        element.style.opacity = num / 10;
+        if (num >= 10) {
+            clearInterval(st);
+        }
+    }, speed);
 }
+
 (function () {
     var isMobile = /Android|webOS|iPhone|iPod|BlackBerry/i.test(navigator.userAgent);
     console.log(isMobile)
     if (isMobile) {
-        document.getElementById("wrapper").style.display="none";
-        document.getElementById("wrapper2").style.display="";
-        fadeOut(document.getElementById("div-background"),80);
-        fadeIn(document.getElementById("div-font"),80);
+        document.getElementById("wrapper").style.display = "none";
+        document.getElementById("wrapper2").style.display = "";
+        fadeOut(document.getElementById("div-background"), 80);
+        fadeIn(document.getElementById("div-font"), 80);
+        var t1 = window.setTimeout(function () {
+            fadeOut(document.getElementById("div-font"), 80);
+        }, 2000)
+        var t2 = window.setTimeout(function () {
+            document.getElementById("div-font").style.display = "none";
+            fadeIn(document.getElementById("div-font2"), 80);
+        }, 3000)
+        var t1 = window.setTimeout(function () {
+            fadeOut(document.getElementById("div-font2"), 80);
+        }, 5000)
+        var t2 = window.setTimeout(function () {
+            document.getElementById("div-font2").style.display = "none";
+            fadeIn(document.getElementById("div-font3"), 80);
+        }, 6000)
     } else {
+        document.getElementById("wrapper").style.display = "";
+        document.getElementById("init-back").style.display = "none";
         var IRON_MAN = [[3, 3, 3, 3, 3, 4, 4, 4, 4, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 8, 4, 4, 4, 4, 3, 8, 2, 2, 2, 8, 4, 4, 4, 4, 3, 8, 1, 1, 1, 1, 1, 1, 1],
             [4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 8, 4, 4, 4, 4, 3, 8, 2, 2, 2, 8, 4, 4, 4, 4, 3, 8, 1, 1, 1, 1, 1, 1, 8],
             [4, 4, 3, 3, 3, 3, 3, 4, 4, 4, 4, 8, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 8, 4, 4, 4, 4, 3, 8, 2, 2, 8, 4, 4, 4, 4, 3, 8, 1, 1, 1, 1, 1, 1, 8],
