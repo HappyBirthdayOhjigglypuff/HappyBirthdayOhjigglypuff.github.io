@@ -30,26 +30,26 @@ function fadeIn(element, speed) {
         var t0 = window.setTimeout(function () {
             document.getElementById("wrapper").style.display = "none";
             document.getElementById("wrapper2").style.display = "";
-            fadeOut(document.getElementById("div-background"), 80);
+            fadeOut(document.getElementById("div-background"), 100);
 
-        }, 500)
+        }, 400)
         var t0 = window.setTimeout(function () {
             fadeIn(document.getElementById("div-font"), 80);
-        }, 1000)
+        }, 1800)
         var t1 = window.setTimeout(function () {
             fadeOut(document.getElementById("div-font"), 80);
-        }, 3000)
+        }, 3800)
         var t2 = window.setTimeout(function () {
             document.getElementById("div-font").style.display = "none";
             fadeIn(document.getElementById("div-font2"), 80);
-        }, 3000)
+        }, 3800)
         var t1 = window.setTimeout(function () {
             fadeOut(document.getElementById("div-font2"), 80);
-        }, 6000)
+        }, 6800)
         var t2 = window.setTimeout(function () {
             document.getElementById("div-font2").style.display = "none";
             fadeIn(document.getElementById("div-font3"), 80);
-        }, 7000)
+        }, 7800)
     } else {
         document.getElementById("wrapper").style.display = "";
         document.getElementById("init-back").style.display = "none";
